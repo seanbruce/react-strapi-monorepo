@@ -596,13 +596,14 @@ export interface PluginGeneralPublicSiteWebSiteMeta extends Schema.SingleType {
     singularName: 'web-site-meta';
     pluralName: 'web-site-metas';
     displayName: 'WebSiteMeta';
+    description: '';
   };
   options: {
     draftAndPublish: true;
-    comment: '';
   };
   attributes: {
     title: Attribute.String;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

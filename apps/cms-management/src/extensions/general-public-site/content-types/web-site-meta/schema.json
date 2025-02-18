@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "web_site_metas",
+  "info": {
+    "singularName": "web-site-meta",
+    "pluralName": "web-site-metas",
+    "displayName": "WebSiteMeta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
