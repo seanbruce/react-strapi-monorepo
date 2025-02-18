@@ -590,6 +590,37 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginGeneralPublicSiteWebSiteMeta extends Schema.SingleType {
+  collectionName: 'web_site_metas';
+  info: {
+    singularName: 'web-site-meta';
+    pluralName: 'web-site-metas';
+    displayName: 'WebSiteMeta';
+  };
+  options: {
+    draftAndPublish: true;
+    comment: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::general-public-site.web-site-meta',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::general-public-site.web-site-meta',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginI18NLocale extends Schema.CollectionType {
   collectionName: 'i18n_locale';
   info: {
@@ -802,6 +833,7 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::general-public-site.web-site-meta': PluginGeneralPublicSiteWebSiteMeta;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
